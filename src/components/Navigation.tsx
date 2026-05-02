@@ -38,7 +38,7 @@ export default function Navigation() {
           onClick={() => handleClick('#hero')}
           className="text-white font-bold text-xl tracking-widest hover:text-blue-400 transition-colors duration-300"
         >
-          SAADHYA<span className="text-blue-400">.</span>
+          SAADHYA
         </button>
 
         {/* Desktop nav */}

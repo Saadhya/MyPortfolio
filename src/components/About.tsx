@@ -117,7 +117,7 @@ export default function About() {
             <div className="mt-4 p-6 border border-yellow-500/20 bg-yellow-500/5 flex items-start gap-4">
               <Award className="text-yellow-400 mt-0.5 flex-shrink-0" size={24} />
               <div>
-                <p className="text-yellow-300 font-semibold text-sm">GEM Award — Capgemini 2024</p>
+                <p className="text-yellow-300 font-semibold text-sm">GEM Award — Capgemini 2025</p>
                 <p className="text-gray-500 text-sm mt-1">Recognised for outstanding delivery and leadership on the Honeywell Career Site</p>
               </div>
             </div>

@@ -1,23 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
-import { Mail, Linkedin, MapPin, Send, ArrowUpRight, Copy, Check } from 'lucide-react';
+import { Linkedin, MapPin, Send, ArrowUpRight, Github } from 'lucide-react';
 import { profile } from '../data/portfolio';
 
 export default function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
-  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.1 });
     if (sectionRef.current) obs.observe(sectionRef.current);
     return () => obs.disconnect();
   }, []);
-
-  const copyEmail = () => {
-    navigator.clipboard.writeText(profile.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   return (
     <section id="contact" ref={sectionRef} className="relative bg-neutral-950 py-28 overflow-hidden">
@@ -39,27 +32,22 @@ export default function Contact() {
         </div>
 
         <div className={`grid md:grid-cols-2 gap-6 max-w-4xl mx-auto transition-all duration-700 delay-200 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          {/* Email card */}
-          <div className="group p-8 border border-white/10 bg-white/2 hover:border-blue-500/40 hover:bg-blue-500/5 transition-all duration-300 relative overflow-hidden">
+          {/* GitHub card */}
+          <a
+            href="https://github.com/Saadhya"
+            target="_blank"
+            rel="noreferrer"
+            className="group p-8 border border-white/10 bg-white/2 hover:border-blue-500/40 hover:bg-blue-500/5 transition-all duration-300 relative overflow-hidden block"
+          >
             <div className="absolute bottom-0 left-0 h-px w-0 bg-blue-500 group-hover:w-full transition-all duration-500" />
             <div className="flex items-start justify-between mb-4">
-              <Mail className="text-blue-400" size={24} />
-              <button
-                onClick={copyEmail}
-                className="p-2 border border-white/10 text-gray-500 hover:text-white hover:border-white/30 transition-all duration-200"
-              >
-                {copied ? <Check size={14} className="text-green-400" /> : <Copy size={14} />}
-              </button>
+              <Github className="text-blue-400" size={24} />
+              <ArrowUpRight size={16} className="text-gray-600 group-hover:text-blue-400 transition-colors" />
             </div>
-            <p className="text-xs text-gray-600 uppercase tracking-widest font-semibold mb-2">Email</p>
-            <a
-              href={`mailto:${profile.email}`}
-              className="text-white font-semibold text-lg hover:text-blue-300 transition-colors break-all"
-            >
-              {profile.email}
-            </a>
-            <p className="text-gray-600 text-sm mt-2">Best for job inquiries</p>
-          </div>
+            <p className="text-xs text-gray-600 uppercase tracking-widest font-semibold mb-2">GitHub</p>
+            <p className="text-white font-semibold text-lg group-hover:text-blue-300 transition-colors">github.com/Saadhya</p>
+            <p className="text-gray-600 text-sm mt-2">View my projects & contributions</p>
+          </a>
 
           {/* LinkedIn card */}
           <a
@@ -107,11 +95,13 @@ export default function Contact() {
               </p>
             </div>
             <a
-              href={`mailto:${profile.email}?subject=Frontend Lead Opportunity&body=Hi Saadhya,`}
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
               className="mt-6 flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/25 text-sm tracking-wider"
             >
               <Send size={14} />
-              Send a Message
+              Connect on LinkedIn
             </a>
           </div>
         </div>

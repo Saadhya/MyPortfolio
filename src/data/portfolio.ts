@@ -30,11 +30,25 @@ export const skills = {
 export const experiences = [
   {
     role: 'Frontend Lead',
+    company: 'Accenture',
+    client: '',
+    period: 'Apr 2026 – Present',
+    duration: '0 mos',
+    type: 'current',
+    highlights: [
+      'Recently joined as Senior React Engineer focusing on enterprise-scale web applications',
+      'Bringing expertise in React, TypeScript, and modern frontend architectures',
+      'Ready to contribute to high-performance, scalable client solutions',
+    ],
+    stack: ['React', 'TypeScript', 'Redux', 'Enterprise Architecture', 'Performance Optimization'],
+  },
+  {
+    role: 'Senior React Engineer',
     company: 'Capgemini',
     client: 'Honeywell Project',
-    period: 'Apr 2024 – Present',
-    duration: '1 yr+',
-    type: 'current',
+    period: 'Apr 2024 – Apr 2026',
+    duration: '2 yrs',
+    type: 'past',
     highlights: [
       'Led development of responsive, high-performance eCommerce web apps using React, TypeScript, Redux',
       'Architected modular component libraries; enforced coding standards, accessibility, and performance budgets',
@@ -186,7 +200,7 @@ export const achievements = [
   {
     title: 'GEM Award',
     detail: 'Capgemini GEM award for outstanding delivery and leadership on Honeywell Career Site',
-    year: '2024',
+    year: '2025',
   },
 ];
 
